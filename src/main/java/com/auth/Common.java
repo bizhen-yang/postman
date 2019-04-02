@@ -1,4 +1,4 @@
-package tv.rr.thor.gateway.auth;
+package com.auth;
 
 import java.io.File;
 import java.io.FileInputStream;

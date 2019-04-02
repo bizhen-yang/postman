@@ -1,4 +1,4 @@
-package tv.rr.thor.gateway.auth;
+package com.auth;
 
 import java.util.Comparator;
 import java.util.HashMap;

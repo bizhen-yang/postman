@@ -1,11 +1,11 @@
-package tv.rr.thor.gateway.auth;
+package com.auth;
 
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 /**
- * MD5加密简易工具类
+ * MD5加密�?易工具类
  * @author donghw
  * */
 
@@ -22,17 +22,17 @@ public class SimpleMD5 {
 	}
 
 	/** 
-	 * md5或者sha-1加密 
+	 * md5或�?�sha-1加密 
 	 *  
 	 * @param inputText 
 	 *            要加密的内容 
 	 * @param algorithmName 
-	 *            加密算法名称：md5或者sha-1，不区分大小写 
+	 *            加密算法名称：md5或�?�sha-1，不区分大小�? 
 	 * @return 
 	 */
 	private static String encrypt(String inputText, String algorithmName) {
 		if (inputText == null || "".equals(inputText.trim())) {
-			throw new IllegalArgumentException("请输入要加密的内容");
+			throw new IllegalArgumentException("请输入要加密的内�?");
 		}
 		if (algorithmName == null || "".equals(algorithmName.trim())) {
 			algorithmName = "md5";
@@ -52,7 +52,7 @@ public class SimpleMD5 {
 		return encryptText;
 	}
 
-	// 返回十六进制字符串  
+	// 返回十六进制字符�?  
 	private static String hex(byte[] arr) {
 		StringBuffer sb = new StringBuffer();
 		for (int i = 0; i < arr.length; ++i) {
