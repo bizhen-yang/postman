@@ -11,7 +11,7 @@
     "result": [
       {
         "id": 513,
-        "cover": "https://img.rr.tv/album/20180404/o_1522840084933.jpg",
+        "cover": "https://img.test/album/20180404/o_1522840084933.jpg",
         "name": "高能反转的烧脑神剧",
         "videoCount": 8,
         "type": "season",
@@ -20,7 +20,7 @@
       },
       {
         "id": 419,
-        "cover": "https://img.rr.tv/album/20180108/o_1515392963542.jpg",
+        "cover": "https://img.test/album/20180108/o_1515392963542.jpg",
         "name": "2017年度最佳人气惊悚类",
         "videoCount": 5,
         "type": "season_toplist",
@@ -29,7 +29,7 @@
       },
       {
         "id": 413,
-        "cover": "https://img.rr.tv/album/20180108/o_1515391132388.jpg",
+        "cover": "https://img.test/album/20180108/o_1515391132388.jpg",
         "name": "2017年度冷门好剧",
         "videoCount": 5,
         "type": "season_toplist",
@@ -38,7 +38,7 @@
       },
       {
         "id": 421,
-        "cover": "https://img.rr.tv/album/20180108/o_1515393273366.jpg",
+        "cover": "https://img.test/album/20180108/o_1515393273366.jpg",
         "name": "2017年度最佳人气奇幻类",
         "videoCount": 5,
         "type": "season_toplist",
@@ -47,7 +47,7 @@
       },
       {
         "id": 415,
-        "cover": "https://img.rr.tv/album/20180108/o_1515391689541.jpg",
+        "cover": "https://img.test/album/20180108/o_1515391689541.jpg",
         "name": "2017年度最佳人气剧情类",
         "videoCount": 5,
         "type": "season_toplist",
