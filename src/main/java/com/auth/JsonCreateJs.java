@@ -48,13 +48,17 @@ public class JsonCreateJs {
            
             if (JSON.parse(dataObject.getString(key)) instanceof JSONObject){
             	System.out.print("var "+key+"=[");
-            	PrintResult(dataObject.getJSONObject(key), key);
+            	PrintResult(dataObject.getJSONObject(key), key, false);
             	 
             }
             else if(JSON.parse(dataObject.getString(key)) instanceof JSONArray){
-            	System.out.print("var "+key+"=[");
+            	
             	JSONArray dataArray = dataObject.getJSONArray(key);
-            	PrintResult( dataArray.getJSONObject(0),key);
+            	if (dataArray.size()!=0){
+            		System.out.print("var "+key+"=[");
+            		PrintResult( dataArray.getJSONObject(0),key, true);
+            	}
+            	
             }
             
             
@@ -62,7 +66,7 @@ public class JsonCreateJs {
         System.out.println(body+"\"]\ncheckValue(body.data, dataKey)");
 	}
 
-	public static void PrintResult(JSONObject dataObject, String key){
+	public static void PrintResult(JSONObject dataObject, String key, boolean isArray){
 		Set<String> key1 = dataObject.keySet();
         
         
@@ -77,6 +81,8 @@ public class JsonCreateJs {
         	
         	
         }
-        System.out.println("\"]\ncheckValue(body.data."+key+", "+key+")\n");
+        
+       String str =  (isArray==true) ? "\"]\ncheckValue(body.data."+key+"[0], "+key+")\n":"\"]\ncheckValue(body.data."+key+", "+key+")\n";
+       System.out.println(str);
 	}
 }
