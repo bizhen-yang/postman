@@ -48,39 +48,13 @@ public class JsonCreateJs {
            
             if (JSON.parse(dataObject.getString(key)) instanceof JSONObject){
             	System.out.print("var "+key+"=[");
-            	JSONObject dataObject1 = dataObject.getJSONObject(key);
-            	 Set<String> key1 = dataObject1.keySet();
-             
-                 
-                 boolean flag = true;
-                 for (String keyi : key1){
-                 	if (flag){
-                 		System.out.print("\""+keyi);
-                 		flag = false;
-                 	}else{
-                 		System.out.print("\",\""+keyi);
-                 	}
-                 	
-                 	
-                 }
-                 System.out.println("\"]\ncheckValue(body.data."+key+", "+key+")\n");
+            	PrintResult(dataObject.getJSONObject(key), key);
+            	 
             }
             else if(JSON.parse(dataObject.getString(key)) instanceof JSONArray){
-            	JSONArray dataArray = dataObject.getJSONArray(key);
-            	Set<String> key1 = dataArray.getJSONObject(0).keySet();
             	System.out.print("var "+key+"=[");
-            	 boolean flag = true;
-                 for (String keyi : key1){
-                 	if (flag){
-                 		System.out.print("\""+keyi);
-                 		flag = false;
-                 	}else{
-                 		System.out.print("\",\""+keyi);
-                 	}
-                 	
-                 	
-                 }
-                 System.out.println("\"]\ncheckValue(body.data."+key+", "+key+")\n");
+            	JSONArray dataArray = dataObject.getJSONArray(key);
+            	PrintResult( dataArray.getJSONObject(0),key);
             }
             
             
@@ -88,4 +62,21 @@ public class JsonCreateJs {
         System.out.println(body+"\"]\ncheckValue(body.data, dataKey)");
 	}
 
+	public static void PrintResult(JSONObject dataObject, String key){
+		Set<String> key1 = dataObject.keySet();
+        
+        
+        boolean flag = true;
+        for (String keyi : key1){
+        	if (flag){
+        		System.out.print("\""+keyi);
+        		flag = false;
+        	}else{
+        		System.out.print("\",\""+keyi);
+        	}
+        	
+        	
+        }
+        System.out.println("\"]\ncheckValue(body.data."+key+", "+key+")\n");
+	}
 }
