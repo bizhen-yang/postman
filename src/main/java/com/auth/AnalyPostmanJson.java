@@ -21,8 +21,21 @@ public class AnalyPostmanJson {
 	public  static void main(String args[]) throws IOException{
 		String filePath = "C:\\Users\\usrt\\Desktop\\通用接口测试.postman_collection.json";//args[0];
 		String envPath = "C:\\Users\\usrt\\Desktop\\thor_web_test_environment.json";
+		String api = "E:\\人人视频\\doc\\重构\\api (1).json";
 		
-		if (args.length == 2){
+		String f="E:\\人人视频\\doc\\重构\\";
+		String jsonData = Common.readPostmanJson(api);
+		JSONArray jsonArray = JSONObject.parseArray(jsonData);
+		for (int i=0; i<jsonArray.size(); i++){
+			
+				JSONObject jsonObject = jsonArray.getJSONObject(i);
+				
+				System.out.println(jsonObject.getString("name"));
+			
+				Common.writePostmanJson("["+jsonObject.toString()+"]", f+jsonObject.getString("name")+".json");
+		}
+		
+		/*if (args.length == 2){
 			filePath = args[0];
 			envPath = args[1];
 		}
@@ -84,7 +97,7 @@ public class AnalyPostmanJson {
 		} catch (JsonProcessingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}*/
 		
 	}
 	
