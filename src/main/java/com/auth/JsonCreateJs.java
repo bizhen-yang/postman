@@ -5,8 +5,6 @@ import java.util.*;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.fasterxml.jackson.core.base.GeneratorBase;
-import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonObjectFormatVisitor;
 
 public class JsonCreateJs {
 
@@ -45,13 +43,12 @@ public class JsonCreateJs {
         		body = body +"\",\""+key;
         	}
         	
-           
-            if (JSON.parse(dataObject.getString(key)) instanceof JSONObject){
+            if (dataObject.get(key) instanceof JSONObject){
             	System.out.print("var "+key+"=[");
             	PrintResult(dataObject.getJSONObject(key), key, false);
             	 
             }
-            else if(JSON.parse(dataObject.getString(key)) instanceof JSONArray){
+            else if(dataObject.get(key) instanceof JSONArray){
             	
             	JSONArray dataArray = dataObject.getJSONArray(key);
             	if (dataArray.size()!=0){
